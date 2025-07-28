@@ -1,15 +1,16 @@
-import { Container } from '@mui/material'
-import { PaymentForm } from './components/PaymentForm'
-
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { PaymentForm } from './components/PaymentForm/PaymentForm';
+import { PaymentScheduleView } from './components/PaymentSchedule/PaymentScheduleView';
 
 function App() {
 
   return (
-    <>
-    <Container>
-      <PaymentForm />
-    </Container>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PaymentForm /> } />
+        <Route  path="/cronograma" element={<PaymentScheduleView /> } />
+      </Routes> 
+    </BrowserRouter>
   )
 }
 
